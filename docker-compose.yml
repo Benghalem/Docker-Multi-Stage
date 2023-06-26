@@ -1,0 +1,22 @@
+version: "3"
+services:
+    node-app:
+        container_name: express-app-container
+        ports:
+            - "4000:4000"
+        env_file:
+            - ./.env
+    mongo:
+        image: mongo
+        restart: always
+        volumes:
+            - mongo-db:/date/db
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
+
+
+
+
+
+      
